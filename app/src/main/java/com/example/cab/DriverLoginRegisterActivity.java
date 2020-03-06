@@ -86,6 +86,8 @@ public class DriverLoginRegisterActivity extends AppCompatActivity {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
                 if (task.isSuccessful()) {
+                    startActivity(new Intent(DriverLoginRegisterActivity.this, DriverMapsActivity.class));
+
                     Toast.makeText(DriverLoginRegisterActivity.this, "login successfully ", Toast.LENGTH_SHORT).show();
                 } else {
                     Toast.makeText(DriverLoginRegisterActivity.this, "login unsuccessfully", Toast.LENGTH_SHORT).show();
@@ -107,6 +109,7 @@ public class DriverLoginRegisterActivity extends AppCompatActivity {
             public void onComplete(@NonNull Task<AuthResult> task) {
                 if (task.isSuccessful()) {
                     Toast.makeText(DriverLoginRegisterActivity.this, "register successfully ", Toast.LENGTH_SHORT).show();
+                    startActivity(new Intent(DriverLoginRegisterActivity.this, DriverMapsActivity.class));
                 } else {
                     Toast.makeText(DriverLoginRegisterActivity.this, "register unsuccessfully", Toast.LENGTH_SHORT).show();
                 }
